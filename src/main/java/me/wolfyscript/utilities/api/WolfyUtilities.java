@@ -110,7 +110,7 @@ public class WolfyUtilities implements Listener {
     }
 
     public static boolean hasJavaXScripting() {
-        return hasClass("javax.script.ScriptEngine");
+        return false;
     }
 
     public static boolean hasSpigot() {

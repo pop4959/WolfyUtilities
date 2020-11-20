@@ -75,12 +75,6 @@ public class APIReferenceSerialization {
                         case "item_key":
                             apiReference = JacksonUtil.getObjectMapper().treeToValue(element, WolfyUtilitiesRef.class);
                             break;
-                        case "oraxen":
-                            apiReference = JacksonUtil.getObjectMapper().treeToValue(element, OraxenRef.class);
-                            break;
-                        case "itemsadder":
-                            apiReference = JacksonUtil.getObjectMapper().treeToValue(element, ItemsAdderRef.class);
-                            break;
                         case "mythicmobs":
                             apiReference = JacksonUtil.getObjectMapper().treeToValue(element, MythicMobsRef.class);
                             break;

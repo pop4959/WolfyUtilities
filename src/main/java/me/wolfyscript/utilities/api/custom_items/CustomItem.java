@@ -10,10 +10,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-import dev.lone.itemsadder.api.ItemsAdder;
 import io.lumine.xikage.mythicmobs.MythicMobs;
 import io.lumine.xikage.mythicmobs.util.jnbt.CompoundTag;
-import io.th0rgal.oraxen.items.OraxenItems;
 import me.wolfyscript.utilities.api.WolfyUtilities;
 import me.wolfyscript.utilities.api.custom_items.api_references.*;
 import me.wolfyscript.utilities.api.custom_items.custom_data.CustomData;
@@ -162,16 +160,7 @@ public class CustomItem extends AbstractItemBuilder<CustomItem> implements Clone
                     apiReference = new WolfyUtilitiesRef(me.wolfyscript.utilities.api.utils.NamespacedKey.getByString(container.get(namespacedKey, PersistentDataType.STRING)));
                 }
                 if (apiReference == null) {
-                    if (WolfyUtilities.hasPlugin("ItemsAdder")) {
-                        if (ItemsAdder.isCustomItem(itemStack)) {
-                            apiReference = new ItemsAdderRef(ItemsAdder.getCustomItemName(itemStack));
-                        }
-                    } else if (WolfyUtilities.hasPlugin("Oraxen")) {
-                        String itemId = OraxenItems.getIdByItem(itemStack);
-                        if (itemId != null && !itemId.isEmpty()) {
-                            apiReference = new OraxenRef(itemId);
-                        }
-                    } else if (WolfyUtilities.hasPlugin("MythicMobs")) {
+                    if (WolfyUtilities.hasPlugin("MythicMobs")) {
                         if (MythicMobs.inst().getVolatileCodeHandler().getItemHandler() != null) {
                             CompoundTag compoundTag = MythicMobs.inst().getVolatileCodeHandler().getItemHandler().getNBTData(itemStack);
                             String name = compoundTag.getString("MYTHIC_TYPE");

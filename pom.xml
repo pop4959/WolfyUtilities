@@ -6,7 +6,7 @@
 
     <groupId>com.wolfyscript</groupId>
     <artifactId>wolfyutilities</artifactId>
-    <version>1.6.2.16</version>
+    <version>1.6.2.16-MH</version>
     <properties>
         <!-- Generic properties -->
         <java.version>1.8</java.version>
@@ -15,16 +15,25 @@
     </properties>
 
     <repositories>
-        <!--
-        WolfyScript private repo
-        This repository requires you to have credentials to access private plugins like Oraxen and ItemsAdder.
-
-        You can use the public repo and then provide your local installed Oraxen and ItemsAdder jars.
-        Public repo: https://maven.wolfyscript.com/repository/public/
-        -->
+        <!-- WolfyScript public repo. Not bothering with Oraxen or ItemsAdder. -->
         <repository>
-            <id>wolfyscript-private</id>
-            <url>https://maven.wolfyscript.com/repository/private/</url>
+            <id>wolfyscript-public</id>
+            <url>https://maven.wolfyscript.com/repository/public/</url>
+        </repository>
+        <!--- WorldEdit / WorldGuard -->
+        <repository>
+            <id>sk89q-repo</id>
+            <url>http://maven.sk89q.com/repo/</url>
+        </repository>
+        <!--- LWC -->
+        <repository>
+            <id>ender-zone-repo</id>
+            <url>https://ci.ender.zone/plugin/repository/everything/</url>
+        </repository>
+        <!--- mcMMO -->
+        <repository>
+            <id>papermc-repo</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -66,9 +75,9 @@
         </dependency>
 
         <dependency>
-            <groupId>de.iani.cubeside</groupId>
-            <artifactId>LWC</artifactId>
-            <version>5.0.16-SNAPSHOT</version>
+            <groupId>com.griefcraft.lwc</groupId>
+            <artifactId>LWCX</artifactId>
+            <version>2.2.6</version>
             <scope>compile</scope>
         </dependency>
 
@@ -109,29 +118,13 @@
         <dependency>
             <groupId>com.gmail.nossr50.mcMMO</groupId>
             <artifactId>mcMMO</artifactId>
-            <version>2.1.139-SNAPSHOT</version>
+            <version>2.1.158</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.lumine.xikage</groupId>
             <artifactId>mythicmobs</artifactId>
             <version>4.10.1</version>
-        </dependency>
-
-        <!--Dependencies from private repo! They require credentials to access!-->
-        <dependency>
-            <groupId>io.th0rgal</groupId>
-            <artifactId>oraxen</artifactId>
-            <version>1.40.0</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>dev.lone</groupId>
-            <artifactId>itemsadder</artifactId>
-            <version>2.1.5</version>
-            <scope>provided</scope>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 

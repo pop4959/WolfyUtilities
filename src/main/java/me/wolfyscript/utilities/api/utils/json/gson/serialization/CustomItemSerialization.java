@@ -27,12 +27,6 @@ public class CustomItemSerialization implements JsonSerializer<CustomItem>, Json
                     case "item_key":
                         customItem.set(new CustomItem((WolfyUtilitiesRef) deserializationContext.deserialize(element, WolfyUtilitiesRef.class)));
                         break;
-                    case "oraxen":
-                        customItem.set(new CustomItem((OraxenRef) deserializationContext.deserialize(element, OraxenRef.class)));
-                        break;
-                    case "itemsadder":
-                        customItem.set(new CustomItem((ItemsAdderRef) deserializationContext.deserialize(element, ItemsAdderRef.class)));
-                        break;
                     case "mythicmobs":
                         customItem.set(new CustomItem((MythicMobsRef) deserializationContext.deserialize(element, MythicMobsRef.class)));
                         break;

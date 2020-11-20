@@ -95,10 +95,8 @@ public class WUPlugin extends JavaPlugin {
 
         //Reference Deserializer
         APIReferenceSerialization.create(module);
-        module.addDeserializer(ItemsAdderRef.class, new ItemsAdderRef.Serialization());
         module.addDeserializer(MMOItemsRef.class, new MMOItemsRef.Serialization());
         module.addDeserializer(MythicMobsRef.class, new MythicMobsRef.Serialization());
-        module.addDeserializer(OraxenRef.class, new OraxenRef.Serialization());
         module.addDeserializer(VanillaRef.class, new VanillaRef.Serialization());
         module.addDeserializer(WolfyUtilitiesRef.class, new WolfyUtilitiesRef.Serialization());
         JacksonUtil.registerModule(module);
